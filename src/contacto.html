@@ -1,0 +1,244 @@
+<section class="pagehead">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Ruta de navegación">
+      <ol>
+        <li><a href="index.html">Inicio</a></li>
+        <li aria-current="page">Contacto</li>
+      </ol>
+    </nav>
+    <p class="eyebrow">Contacto</p>
+    <h1>Estamos a cuatro kilómetros de Barichara</h1>
+    <p class="lead">Escríbenos, llámanos o ven a conocernos. Atendemos de lunes a viernes durante
+      la jornada escolar y respondemos los mensajes en un plazo máximo de dos días hábiles.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="split">
+      <!-- Datos -->
+      <div data-reveal>
+        <p class="eyebrow">Datos de contacto</p>
+        <h2>Cómo comunicarte con nosotros</h2>
+        <div class="grid mt-3" style="gap:1rem">
+          <div class="contact-card">
+            {{icon:pin}}
+            <div>
+              <b>Dirección</b>
+              <span>{{address}}</span>
+              <span>{{city}}, {{region}}, {{country}}</span>
+            </div>
+          </div>
+          <div class="contact-card">
+            {{icon:phone}}
+            <div>
+              <b>Teléfonos</b>
+              <a href="tel:{{phone_1_raw}}">{{phone_1}}</a>
+              <a href="tel:{{phone_2_raw}}">{{phone_2}}</a>
+            </div>
+          </div>
+          <div class="contact-card">
+            {{icon:mail}}
+            <div>
+              <b>Correo electrónico</b>
+              <a href="mailto:{{email_info}}">{{email_info}}</a>
+              <a href="mailto:{{email}}">{{email}}</a>
+            </div>
+          </div>
+          <div class="contact-card">
+            {{icon:clock}}
+            <div>
+              <b>Horario de atención</b>
+              <span>Lunes a viernes · 7:00 a.m. – 3:30 p.m.</span>
+              <span>Atención a familias con cita previa</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="btn-row mt-3">
+          <a class="btn" href="https://wa.me/573105664719?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20el%20colegio"
+             target="_blank" rel="noopener noreferrer">Escribir por WhatsApp</a>
+          <a class="btn btn--ghost" href="{{instagram}}" target="_blank" rel="noopener noreferrer">Instagram</a>
+        </div>
+      </div>
+
+      <!-- Formulario -->
+      <div data-reveal data-reveal-delay="1">
+        <div class="card">
+          <h2 style="font-size:var(--fs-h3);margin-bottom:.4rem">Escríbenos</h2>
+          <p style="color:var(--text-soft);font-size:.93rem;margin-bottom:1.5rem">
+            Cuéntanos qué necesitas y te respondemos por el canal que prefieras.</p>
+
+          <form class="form" data-validate novalidate
+                data-success="¡Gracias por escribirnos! Recibimos tu mensaje y te responderemos en un plazo máximo de 2 días hábiles.">
+            <div class="form-status" aria-live="polite"></div>
+
+            <div class="field">
+              <label for="ct-nombre">Nombre completo <span class="req">*</span></label>
+              <input type="text" id="ct-nombre" name="nombre" required minlength="3" autocomplete="name">
+              <p class="error">Escribe tu nombre completo.</p>
+            </div>
+
+            <div class="form__row">
+              <div class="field">
+                <label for="ct-email">Correo electrónico <span class="req">*</span></label>
+                <input type="email" id="ct-email" name="email" required autocomplete="email">
+                <p class="error">Escribe un correo electrónico válido.</p>
+              </div>
+              <div class="field">
+                <label for="ct-tel">Teléfono</label>
+                <input type="tel" id="ct-tel" name="telefono" autocomplete="tel">
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="ct-asunto">Asunto <span class="req">*</span></label>
+              <select id="ct-asunto" name="asunto" required>
+                <option value="">Selecciona…</option>
+                <option>Información de admisiones</option>
+                <option>Agendar una visita al campus</option>
+                <option>Costos educativos y apoyos</option>
+                <option>Ruta escolar</option>
+                <option>Soy familia del colegio</option>
+                <option>Trabaja con nosotros</option>
+                <option>Prensa o alianzas</option>
+                <option>Otro</option>
+              </select>
+              <p class="error">Selecciona un asunto.</p>
+            </div>
+
+            <div class="field">
+              <label for="ct-mensaje">Mensaje <span class="req">*</span></label>
+              <textarea id="ct-mensaje" name="mensaje" required minlength="10"></textarea>
+              <p class="error">Escribe tu mensaje (mínimo 10 caracteres).</p>
+            </div>
+
+            <div class="field">
+              <label class="check">
+                <input type="checkbox" name="habeas" required>
+                <span>Autorizo el tratamiento de mis datos personales conforme a la Ley 1581 de 2012.
+                  <span class="req">*</span></span>
+              </label>
+              <p class="error">Debes autorizar el tratamiento de datos para continuar.</p>
+            </div>
+
+            <button class="btn btn--accent" type="submit">Enviar mensaje</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= MAPA ============================= -->
+<section class="section section--alt" id="mapa">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <p class="eyebrow">Cómo llegar</p>
+      <h2>Vía Barichara – San Gil, kilómetro 4</h2>
+      <p class="lead">Tomando la vía que sale de Barichara hacia San Gil, el colegio está sobre el
+        costado de la vereda El Llano, a unos diez minutos del casco urbano.</p>
+    </div>
+
+    <div class="map-frame" data-reveal>
+      <iframe
+        title="Mapa de ubicación de la Fundación Reserva para la Infancia en Barichara, Santander"
+        src="https://www.openstreetmap.org/export/embed.html?bbox=-73.2536%2C6.6155%2C-73.1936%2C6.6555&amp;layer=mapnik&amp;marker=6.6355%2C-73.2236"
+        loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+    <div class="grid grid--3 mt-3">
+      <div class="card" data-reveal>
+        <div class="card__icon card__icon--cielo">{{icon:check}}</div>
+        <h3>Desde Barichara</h3>
+        <p>10 minutos en vehículo por la vía a San Gil. La ruta escolar del colegio recoge en el
+          casco urbano.</p>
+      </div>
+      <div class="card" data-reveal data-reveal-delay="1">
+        <div class="card__icon card__icon--sol">{{icon:check}}</div>
+        <h3>Desde San Gil</h3>
+        <p>Aproximadamente 30 minutos por la vía Barichara. Contamos con ruta escolar desde
+          San Gil.</p>
+      </div>
+      <div class="card" data-reveal data-reveal-delay="2">
+        <div class="card__icon card__icon--teja">{{icon:check}}</div>
+        <h3>Visitas</h3>
+        <p>Las visitas al campus se agendan previamente para que puedas recorrerlo acompañado
+          por alguien del equipo.</p>
+      </div>
+    </div>
+
+    <div class="note-box mt-3" data-reveal>
+      <strong>Nota para el administrador del sitio:</strong> ajusta las coordenadas exactas del mapa
+      en <code>src/contacto.html</code> y en <code>tools/build.py</code> (campos <code>lat</code> y
+      <code>lon</code>) con la ubicación real del campus.
+    </div>
+  </div>
+</section>
+
+<!-- ============================ LEGAL ============================ -->
+<section class="section" id="legal">
+  <div class="wrap wrap--narrow">
+    <div class="section-head" data-reveal>
+      <p class="eyebrow">Protección de datos</p>
+      <h2>Política de tratamiento de datos personales</h2>
+    </div>
+    <div class="accordion" data-reveal>
+      <div class="acc__item">
+        <h3><button class="acc__btn" aria-expanded="false" aria-controls="lg-1">
+          ¿Quién es el responsable del tratamiento?
+          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+        </button></h3>
+        <div class="acc__panel" id="lg-1"><div>
+          <p>{{name}}, entidad sin ánimo de lucro identificada con NIT {{nit}}, con domicilio en
+            {{address}}, {{city}}, {{region}}. Correo de contacto para asuntos de datos personales:
+            <a href="mailto:{{email_info}}">{{email_info}}</a>.</p>
+        </div></div>
+      </div>
+      <div class="acc__item">
+        <h3><button class="acc__btn" aria-expanded="false" aria-controls="lg-2">
+          ¿Para qué usamos tus datos?
+          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+        </button></h3>
+        <div class="acc__panel" id="lg-2"><div>
+          <p>Los datos que nos entregas a través de los formularios de este sitio se usan
+            exclusivamente para responder tu solicitud, adelantar el proceso de admisión y enviarte
+            información institucional que hayas pedido.</p>
+          <ul>
+            <li>No vendemos ni compartimos tus datos con terceros con fines comerciales.</li>
+            <li>No usamos los datos para publicidad de terceros.</li>
+            <li>Conservamos la información solo mientras sea necesaria para esas finalidades.</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="acc__item">
+        <h3><button class="acc__btn" aria-expanded="false" aria-controls="lg-3">
+          ¿Cuáles son tus derechos?
+          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+        </button></h3>
+        <div class="acc__panel" id="lg-3"><div>
+          <p>Conforme a la Ley 1581 de 2012 y al Decreto 1074 de 2015, puedes conocer, actualizar,
+            rectificar y suprimir tus datos personales, así como revocar la autorización otorgada.
+            Para ejercer estos derechos escríbenos a <a href="mailto:{{email_info}}">{{email_info}}</a>.</p>
+        </div></div>
+      </div>
+      <div class="acc__item">
+        <h3><button class="acc__btn" aria-expanded="false" aria-controls="lg-4">
+          Uso de imagen de menores de edad
+          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+        </button></h3>
+        <div class="acc__panel" id="lg-4"><div>
+          <p>La publicación de fotografías o videos de estudiantes menores de edad requiere
+            autorización escrita, previa y expresa de sus padres o acudientes. Esa autorización es
+            voluntaria, específica y puede revocarse en cualquier momento.</p>
+        </div></div>
+      </div>
+    </div>
+
+    <div class="note-box mt-3" data-reveal>
+      <strong>Nota para el administrador del sitio:</strong> este texto es un resumen orientativo.
+      Publica aquí la política de tratamiento de datos formalmente adoptada por el consejo directivo
+      y revisada por el asesor jurídico de la institución.
+    </div>
+  </div>
+</section>

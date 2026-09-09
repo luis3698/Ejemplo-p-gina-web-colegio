@@ -1,0 +1,7 @@
+# Fundación Reserva para la Infancia — Barichara, Santander
+User-agent: *
+Allow: /
+Disallow: /src/
+Disallow: /tools/
+
+Sitemap: https://www.fundareservabarichara.edu.co/sitemap.xml
