@@ -1,7 +1,7 @@
 {
-  "name": "Fundación Reserva para la Infancia",
-  "short_name": "FundaReserva",
-  "description": "Colegio campestre de pedagogía viva en Barichara, Santander. Preescolar, primaria, secundaria y media.",
+  "name": "Colegio Ejemplo",
+  "short_name": "Colegio",
+  "description": "Institución educativa de calendario A con preescolar, primaria, secundaria y media.",
   "lang": "es-CO",
   "dir": "ltr",
   "start_url": "index.html",
@@ -16,8 +16,9 @@
     { "src": "assets/img/logo.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "maskable" }
   ],
   "shortcuts": [
-    { "name": "Admisiones 2027", "url": "admisiones.html" },
+    { "name": "Admisiones", "url": "admisiones.html" },
     { "name": "Contacto", "url": "contacto.html" },
-    { "name": "Noticias", "url": "noticias.html" }
+    { "name": "Noticias", "url": "noticias.html" },
+    { "name": "English", "url": "en/index.html" }
   ]
 }

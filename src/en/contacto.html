@@ -1,0 +1,249 @@
+<section class="pagehead">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="index.html">Home</a></li>
+        <li aria-current="page">Contact</li>
+      </ol>
+    </nav>
+    <p class="eyebrow">Contact</p>
+    <h1>Let's talk</h1>
+    <p class="lead">Write to us, call us or come and see us. We are open Monday to Friday during
+      the school day and reply to messages within two working days.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="split">
+      <!-- Details -->
+      <div data-reveal>
+        <p class="eyebrow">Contact details</p>
+        <h2>How to reach us</h2>
+        <div class="grid mt-3" style="gap:1rem">
+          <div class="contact-card">
+            {{icon:pin}}
+            <div>
+              <b>Address</b>
+              <span>{{address}}</span>
+              <span>{{city}}, {{region}}, {{country}}</span>
+            </div>
+          </div>
+          <div class="contact-card">
+            {{icon:phone}}
+            <div>
+              <b>Phone</b>
+              <a href="tel:{{phone_1_raw}}">{{phone_1}}</a>
+              <a href="tel:{{phone_2_raw}}">{{phone_2}}</a>
+            </div>
+          </div>
+          <div class="contact-card">
+            {{icon:mail}}
+            <div>
+              <b>Email</b>
+              <a href="mailto:{{email_info}}">{{email_info}}</a>
+              <a href="mailto:{{email}}">{{email}}</a>
+            </div>
+          </div>
+          <div class="contact-card">
+            {{icon:clock}}
+            <div>
+              <b>Opening hours</b>
+              <span>Monday to Friday · 7:00 a.m. – 3:30 p.m.</span>
+              <span>Family appointments by prior arrangement</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="btn-row mt-3">
+          <a class="btn" href="https://wa.me/{{phone_1_clean}}?text=Hello%2C%20I%27d%20like%20information%20about%20the%20school"
+             target="_blank" rel="noopener noreferrer">Message us on WhatsApp</a>
+          <a class="btn btn--ghost" href="{{instagram}}" target="_blank" rel="noopener noreferrer">Instagram</a>
+        </div>
+      </div>
+
+      <!-- Form -->
+      <div data-reveal data-reveal-delay="1">
+        <div class="card">
+          <h2 style="font-size:var(--fs-h3);margin-bottom:.4rem">Write to us</h2>
+          <p style="color:var(--text-soft);font-size:.93rem;margin-bottom:1.5rem">
+            Tell us what you need and we will reply through whichever channel you prefer.</p>
+
+          <form class="form" data-validate novalidate
+                data-subject="New contact message from the website"
+                data-success="Thank you for writing! We have received your message and will reply within two working days.">
+            <div class="form-status" aria-live="polite"></div>
+
+            <div class="hp" aria-hidden="true">
+              <label for="ct-gotcha">Do not fill in this field</label>
+              <input type="text" id="ct-gotcha" name="_gotcha" tabindex="-1" autocomplete="off">
+            </div>
+
+            <div class="field">
+              <label for="ct-nombre">Full name <span class="req">*</span></label>
+              <input type="text" id="ct-nombre" name="nombre" required minlength="3" autocomplete="name">
+              <p class="error">Please enter your full name.</p>
+            </div>
+
+            <div class="form__row">
+              <div class="field">
+                <label for="ct-email">Email <span class="req">*</span></label>
+                <input type="email" id="ct-email" name="email" required autocomplete="email">
+                <p class="error">Please enter a valid email address.</p>
+              </div>
+              <div class="field">
+                <label for="ct-tel">Phone</label>
+                <input type="tel" id="ct-tel" name="telefono" autocomplete="tel">
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="ct-asunto">Subject <span class="req">*</span></label>
+              <select id="ct-asunto" name="asunto" required>
+                <option value="">Select…</option>
+                <option>Admissions information</option>
+                <option>Book a campus visit</option>
+                <option>Tuition and financial aid</option>
+                <option>School transport</option>
+                <option>I am a current parent</option>
+                <option>Work with us</option>
+                <option>Press or partnerships</option>
+                <option>Other</option>
+              </select>
+              <p class="error">Please choose a subject.</p>
+            </div>
+
+            <div class="field">
+              <label for="ct-mensaje">Message <span class="req">*</span></label>
+              <textarea id="ct-mensaje" name="mensaje" required minlength="10"></textarea>
+              <p class="error">Please write your message (at least 10 characters).</p>
+            </div>
+
+            <div class="field">
+              <label class="check">
+                <input type="checkbox" name="habeas" required>
+                <span>I consent to the processing of my personal data in accordance with Law 1581
+                  of 2012. <span class="req">*</span></span>
+              </label>
+              <p class="error">You must consent to data processing to continue.</p>
+            </div>
+
+            <button class="btn btn--accent" type="submit">Send message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= MAP ============================= -->
+<section class="section section--alt" id="mapa">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <p class="eyebrow">Getting here</p>
+      <h2>Where we are</h2>
+      <p class="lead">{{address}}, {{city}}, {{region}}. Check the access routes and the school
+        transport service.</p>
+    </div>
+
+    <div class="map-frame" data-reveal>
+      <iframe
+        title="Map showing the location of the school"
+        src="https://www.openstreetmap.org/export/embed.html?bbox=-74.1021%2C4.6810%2C-74.0421%2C4.7410&amp;layer=mapnik&amp;marker=4.7110%2C-74.0721"
+        loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+    <div class="grid grid--3 mt-3">
+      <div class="card" data-reveal>
+        <div class="card__icon card__icon--cielo">{{icon:check}}</div>
+        <h3>By car</h3>
+        <p>We have a parking area and a drop-off bay for arrival and departure.</p>
+      </div>
+      <div class="card" data-reveal data-reveal-delay="1">
+        <div class="card__icon card__icon--sol">{{icon:check}}</div>
+        <h3>School transport</h3>
+        <p>Several routes with an adult attendant, coordinated with the school timetable.
+          Ask the administration office about coverage.</p>
+      </div>
+      <div class="card" data-reveal data-reveal-delay="2">
+        <div class="card__icon card__icon--teja">{{icon:check}}</div>
+        <h3>Visits</h3>
+        <p>Campus visits are booked in advance so that someone from the team can show you
+          around.</p>
+      </div>
+    </div>
+
+    <div class="note-box mt-3" data-reveal>
+      <strong>Note for the site administrator:</strong> update the exact map coordinates in
+      <code>src/es/contacto.html</code>, <code>src/en/contacto.html</code> and in
+      <code>tools/build.py</code> (the <code>lat</code> and <code>lon</code> fields).
+    </div>
+  </div>
+</section>
+
+<!-- ============================ LEGAL ============================ -->
+<section class="section" id="legal">
+  <div class="wrap wrap--narrow">
+    <div class="section-head" data-reveal>
+      <p class="eyebrow">Data protection</p>
+      <h2>Personal data protection policy</h2>
+    </div>
+    <div class="accordion" data-reveal>
+      <div class="acc__item">
+        <h3><button class="acc__btn" aria-expanded="false" aria-controls="lg-1">
+          Who is the data controller?
+          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+        </button></h3>
+        <div class="acc__panel" id="lg-1"><div>
+          <p>{{name}}, tax ID {{nit}}, registered at {{address}}, {{city}}, {{region}}. Contact
+            address for data protection matters:
+            <a href="mailto:{{email_info}}">{{email_info}}</a>.</p>
+        </div></div>
+      </div>
+      <div class="acc__item">
+        <h3><button class="acc__btn" aria-expanded="false" aria-controls="lg-2">
+          What do we use your data for?
+          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+        </button></h3>
+        <div class="acc__panel" id="lg-2"><div>
+          <p>The data you provide through the forms on this site is used solely to respond to your
+            enquiry, to carry out the admissions process and to send you the institutional
+            information you have requested.</p>
+          <ul>
+            <li>We do not sell or share your data with third parties for commercial purposes.</li>
+            <li>We do not use your data for third-party advertising.</li>
+            <li>We keep the information only for as long as it is needed for those purposes.</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="acc__item">
+        <h3><button class="acc__btn" aria-expanded="false" aria-controls="lg-3">
+          What are your rights?
+          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+        </button></h3>
+        <div class="acc__panel" id="lg-3"><div>
+          <p>Under Law 1581 of 2012 and Decree 1074 of 2015, you may access, update, correct and
+            delete your personal data, and withdraw the consent you have given. To exercise these
+            rights, write to <a href="mailto:{{email_info}}">{{email_info}}</a>.</p>
+        </div></div>
+      </div>
+      <div class="acc__item">
+        <h3><button class="acc__btn" aria-expanded="false" aria-controls="lg-4">
+          Use of images of children
+          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+        </button></h3>
+        <div class="acc__panel" id="lg-4"><div>
+          <p>Publishing photographs or videos of students under 18 requires prior, express written
+            consent from their parents or guardians. That consent is voluntary, specific and may
+            be withdrawn at any time.</p>
+        </div></div>
+      </div>
+    </div>
+
+    <div class="note-box mt-3" data-reveal>
+      <strong>Note for the site administrator:</strong> this text is an indicative summary. Publish
+      here the data protection policy formally adopted by the governing council and reviewed by
+      the school's legal adviser.
+    </div>
+  </div>
+</section>

@@ -1,4 +1,4 @@
-/* Service worker — Fundación Reserva para la Infancia
+/* Service worker — sitio web escolar (bilingüe)
    -------------------------------------------------------------------------
    Estrategia deliberadamente conservadora, pensada para que el equipo del
    colegio pueda actualizar el sitio sin pelear con la caché del navegador:
@@ -9,7 +9,7 @@
      (Son las que más pesan y las que menos cambian.)
 
    Sube el número de VERSION cada vez que hagas un despliegue grande. */
-const VERSION = 'fri-v2';
+const VERSION = 'site-v3';
 
 const OFFLINE_PAGES = [
   './',
@@ -22,6 +22,15 @@ const OFFLINE_PAGES = [
   'noticias.html',
   'contacto.html',
   '404.html',
+  'en/index.html',
+  'en/nosotros.html',
+  'en/proyecto-educativo.html',
+  'en/niveles.html',
+  'en/vida-escolar.html',
+  'en/admisiones.html',
+  'en/noticias.html',
+  'en/contacto.html',
+  'en/404.html',
   'assets/css/style.css',
   'assets/js/main.js',
   'assets/img/logo.svg'
@@ -61,13 +70,16 @@ self.addEventListener('fetch', function (e) {
   var url = new URL(req.url);
   if (url.origin !== self.location.origin) return; // fuentes y mapas: sin interceptar
 
-  var isImage = req.destination === 'image' || /\.(svg|png|jpe?g|webp|avif|gif|ico)$/i.test(url.pathname);
+  var isImage = req.destination === 'image' ||
+    /\.(svg|png|jpe?g|webp|avif|gif|ico)$/i.test(url.pathname);
 
   // Imágenes: caché primero, refresco en segundo plano.
   if (isImage) {
     e.respondWith(
       caches.match(req).then(function (hit) {
-        var network = fetch(req).then(function (res) { return putInCache(req, res); }).catch(function () { return hit; });
+        var network = fetch(req)
+          .then(function (res) { return putInCache(req, res); })
+          .catch(function () { return hit; });
         return hit || network;
       })
     );
@@ -81,7 +93,10 @@ self.addEventListener('fetch', function (e) {
       .catch(function () {
         return caches.match(req).then(function (hit) {
           if (hit) return hit;
-          if (req.mode === 'navigate') return caches.match('404.html');
+          if (req.mode === 'navigate') {
+            var fallback = url.pathname.indexOf('/en/') !== -1 ? 'en/404.html' : '404.html';
+            return caches.match(fallback);
+          }
           return Response.error();
         });
       })

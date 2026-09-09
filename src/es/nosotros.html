@@ -7,10 +7,10 @@
       </ol>
     </nav>
     <p class="eyebrow">Quiénes somos</p>
-    <h1>Veinticinco años cuidando la infancia en Barichara</h1>
-    <p class="lead">La Fundación Reserva para la Infancia es una entidad sin ánimo de lucro que sostiene
-      un colegio campestre en la vereda El Llano. Nacimos de una reserva natural y de una convicción:
-      la infancia merece crecer en libertad, con adultos presentes y con la tierra cerca.</p>
+    <h1>Tres décadas acompañando el crecimiento de nuestros estudiantes</h1>
+    <p class="lead">Somos una institución educativa privada de calendario A. Desde {{founded}}
+      trabajamos con una convicción sencilla: los niños y jóvenes aprenden mejor cuando se
+      sienten vistos, desafiados y acompañados por adultos preparados.</p>
   </div>
 </section>
 
@@ -21,22 +21,28 @@
       <article class="card" data-reveal>
         <div class="card__icon">{{icon:check}}</div>
         <h3>Misión</h3>
-        <p>Acompañar el desarrollo integral de niñas, niños y jóvenes a través de una pedagogía viva
-          que respeta sus ritmos, despierta su pensamiento y los vincula con la naturaleza y con la
-          comunidad de la que hacen parte.</p>
+        <p>Acompañar el desarrollo integral de niñas, niños y jóvenes a través de un modelo
+          pedagógico que respeta sus ritmos, despierta su pensamiento crítico y los vincula
+          con la comunidad de la que hacen parte.</p>
       </article>
       <article class="card" data-reveal data-reveal-delay="1">
         <div class="card__icon card__icon--sol">{{icon:check}}</div>
         <h3>Visión</h3>
-        <p>Ser en 2032 un referente regional de educación viva y ambiental en Santander: una escuela
-          abierta que forma personas autónomas, sensibles y capaces de cuidar el territorio que habitan.</p>
+        <p>Ser reconocidos como una institución de referencia por la calidad de su propuesta
+          pedagógica y por la formación de personas autónomas, sensibles y comprometidas
+          con su entorno.</p>
       </article>
       <article class="card" data-reveal data-reveal-delay="2">
         <div class="card__icon card__icon--teja">{{icon:check}}</div>
         <h3>Nuestro propósito</h3>
-        <p>Que cada estudiante termine el colegio conservando intacto lo más valioso con lo que llegó:
-          las ganas de preguntar. Todo lo demás —contenidos, resultados, títulos— se construye sobre eso.</p>
+        <p>Que cada estudiante termine el colegio conservando intacto lo más valioso con lo que
+          llegó: las ganas de preguntar. Todo lo demás —contenidos, resultados, títulos— se
+          construye sobre eso.</p>
       </article>
+    </div>
+    <div class="note-box mt-3" data-reveal>
+      <strong>Nota para el administrador del sitio:</strong> reemplaza estos textos por la misión,
+      la visión y los principios formalmente adoptados en el PEI de la institución.
     </div>
   </div>
 </section>
@@ -47,16 +53,15 @@
     <div class="section-head" data-reveal>
       <p class="eyebrow">Principios</p>
       <h2>Seis acuerdos que sostienen la vida del colegio</h2>
-      <p class="lead">No son un cartel en la pared: son criterios con los que tomamos decisiones
-        pedagógicas todos los días.</p>
+      <p class="lead">Criterios con los que tomamos decisiones pedagógicas todos los días.</p>
     </div>
 
     <div class="grid grid--3">
       <article class="card" data-reveal>
         <p class="card__num" aria-hidden="true">01</p>
         <h3>Respeto por el ritmo</h3>
-        <p>Cada persona aprende en un tiempo distinto. Acompañamos ese tiempo en lugar de forzarlo,
-          sin renunciar a la exigencia ni a los logros esperados por grado.</p>
+        <p>Cada persona aprende en un tiempo distinto. Acompañamos ese tiempo en lugar de
+          forzarlo, sin renunciar a la exigencia ni a los logros esperados por grado.</p>
       </article>
       <article class="card" data-reveal data-reveal-delay="1">
         <p class="card__num" aria-hidden="true">02</p>
@@ -67,26 +72,26 @@
       <article class="card" data-reveal data-reveal-delay="2">
         <p class="card__num" aria-hidden="true">03</p>
         <h3>Vínculo antes que contenido</h3>
-        <p>Nadie aprende de quien no lo mira. El adulto acompañante conoce a cada estudiante
-          y esa relación es la base del trabajo académico.</p>
+        <p>Nadie aprende de quien no lo mira. El docente conoce a cada estudiante y esa
+          relación es la base del trabajo académico.</p>
       </article>
       <article class="card" data-reveal>
         <p class="card__num" aria-hidden="true">04</p>
-        <h3>La naturaleza educa</h3>
-        <p>El bosque, la huerta y los ciclos de la tierra no son un decorado: son contenido
-          curricular y escuela de paciencia.</p>
+        <h3>Pensamiento crítico</h3>
+        <p>Enseñamos a argumentar, a contrastar fuentes y a cambiar de opinión cuando la
+          evidencia lo justifica.</p>
       </article>
       <article class="card" data-reveal data-reveal-delay="1">
         <p class="card__num" aria-hidden="true">05</p>
         <h3>La familia es parte</h3>
         <p>Escuela de familias, encuentros de acompañamiento y participación en proyectos.
-          Educar a un niño exige coherencia entre casa y colegio.</p>
+          Educar exige coherencia entre casa y colegio.</p>
       </article>
       <article class="card" data-reveal data-reveal-delay="2">
         <p class="card__num" aria-hidden="true">06</p>
         <h3>Arraigo y apertura</h3>
-        <p>Amamos a Barichara y a su gente, y preparamos a nuestros estudiantes para dialogar
-          con el mundo desde esa raíz.</p>
+        <p>Valoramos nuestra comunidad y preparamos a los estudiantes para dialogar con el
+          mundo desde esa raíz.</p>
       </article>
     </div>
   </div>
@@ -96,43 +101,46 @@
 <section class="section" id="historia">
   <div class="wrap split">
     <div class="split__media" data-reveal>
-      <img src="assets/img/escena-campus.svg" alt="Ilustración del campus histórico del colegio en la reserva." width="1000" height="750">
+      {{photo:campus|Fachada e instalaciones de la institución|escena-campus.svg|(min-width: 920px) 46vw, 100vw}}
     </div>
     <div data-reveal data-reveal-delay="1">
       <p class="eyebrow">Nuestra historia</p>
-      <h2>De una reserva natural a una comunidad educativa</h2>
+      <h2>De un proyecto pequeño a una comunidad educativa</h2>
       <ol class="timeline mt-2">
         <li class="timeline__item">
-          <p class="timeline__year">2000</p>
-          <h3>Nace la Fundación</h3>
-          <p>Un grupo de familias de Barichara constituye la Fundación Reserva para la Infancia como
-            entidad sin ánimo de lucro, con la idea de cuidar a la vez un terreno y una manera de educar.</p>
+          <p class="timeline__year">Año 1</p>
+          <h3>Nace la institución</h3>
+          <p>Un grupo de familias y educadores funda el colegio con la idea de ofrecer una
+            alternativa pedagógica distinta en la región.</p>
         </li>
         <li class="timeline__item">
-          <p class="timeline__year">2008</p>
-          <h3>Los primeros grados</h3>
-          <p>El proyecto de preescolar y primeros grados de primaria se consolida en el predio de la
-            vereda El Llano, sobre la vía a San Gil.</p>
+          <p class="timeline__year">Año 8</p>
+          <h3>Se completa la primaria</h3>
+          <p>El proyecto de preescolar se extiende hasta grado quinto y se consolida una
+            propuesta curricular propia.</p>
         </li>
         <li class="timeline__item">
-          <p class="timeline__year">2015</p>
-          <h3>72 estudiantes</h3>
-          <p>La comunidad crece y el colegio completa la básica primaria con una propuesta pedagógica
-            propia, reconocida por las familias de la provincia.</p>
+          <p class="timeline__year">Año 15</p>
+          <h3>Nuevo campus</h3>
+          <p>La institución se traslada a su sede actual, con laboratorios, biblioteca y
+            zonas deportivas propias.</p>
         </li>
         <li class="timeline__item">
-          <p class="timeline__year">2019</p>
+          <p class="timeline__year">Año 22</p>
           <h3>Bachillerato completo</h3>
-          <p>Se abre la educación media. Los estudiantes que llegaron a jardín pueden ahora graduarse
-            en la misma casa donde aprendieron a leer.</p>
+          <p>Se abre la educación media. Los estudiantes que llegaron a jardín pueden ahora
+            graduarse en la misma casa donde aprendieron a leer.</p>
         </li>
         <li class="timeline__item">
-          <p class="timeline__year">2025</p>
-          <h3>Más de 170 estudiantes</h3>
-          <p>La matrícula se multiplica por más de dos en una década y los resultados Saber 11 superan
-            los promedios municipal y departamental.</p>
+          <p class="timeline__year">Hoy</p>
+          <h3>Más de 600 estudiantes</h3>
+          <p>La comunidad crece y los resultados en pruebas externas se mantienen por encima
+            del promedio nacional.</p>
         </li>
       </ol>
+      <div class="note-box mt-3">
+        <strong>Nota:</strong> sustituye los años y los hitos por la historia real de la institución.
+      </div>
     </div>
   </div>
 </section>
@@ -143,37 +151,37 @@
     <div class="section-head" data-reveal>
       <p class="eyebrow">Nuestro equipo</p>
       <h2>Adultos presentes, formados y disponibles</h2>
-      <p class="lead">Maestras y maestros con formación en pedagogías activas, acompañamiento emocional
-        y trabajo por proyectos. La proporción de adultos por grupo es una decisión pedagógica, no
-        administrativa.</p>
+      <p class="lead">Docentes con formación disciplinar y pedagógica, acompañamiento emocional
+        y trabajo por proyectos. La proporción de adultos por grupo es una decisión pedagógica,
+        no administrativa.</p>
     </div>
 
     <div class="grid grid--4">
       <article class="person" data-reveal>
-        <div class="person__photo"><img src="assets/img/escena-comunidad.svg" alt="" width="1000" height="750"></div>
+        <div class="person__photo">{{photo:equipo-1||escena-comunidad.svg|(min-width: 920px) 24vw, 50vw}}</div>
         <h3>Rectoría</h3>
         <span>Dirección general y horizonte institucional</span>
       </article>
       <article class="person" data-reveal data-reveal-delay="1">
-        <div class="person__photo"><img src="assets/img/escena-aula.svg" alt="" width="1000" height="750"></div>
+        <div class="person__photo">{{photo:equipo-2||escena-aula.svg|(min-width: 920px) 24vw, 50vw}}</div>
         <h3>Coordinación académica</h3>
         <span>Currículo, seguimiento y formación docente</span>
       </article>
       <article class="person" data-reveal data-reveal-delay="2">
-        <div class="person__photo"><img src="assets/img/escena-huerta.svg" alt="" width="1000" height="750"></div>
+        <div class="person__photo">{{photo:equipo-3||escena-biblioteca.svg|(min-width: 920px) 24vw, 50vw}}</div>
         <h3>Coordinación de convivencia</h3>
         <span>Acompañamiento emocional y acuerdos</span>
       </article>
       <article class="person" data-reveal data-reveal-delay="3">
-        <div class="person__photo"><img src="assets/img/escena-taller.svg" alt="" width="1000" height="750"></div>
-        <h3>Equipo de acompañantes</h3>
+        <div class="person__photo">{{photo:equipo-4||escena-arte.svg|(min-width: 920px) 24vw, 50vw}}</div>
+        <h3>Equipo docente</h3>
         <span>Maestras y maestros de todos los niveles</span>
       </article>
     </div>
 
     <div class="note-box mt-3" data-reveal>
-      <strong>Nota para el administrador del sitio:</strong> reemplaza estas tarjetas por las fotografías
-      y los nombres reales del equipo directivo y docente. Ver <code>src/nosotros.html</code>.
+      <strong>Nota para el administrador del sitio:</strong> reemplaza estas tarjetas por las
+      fotografías y los nombres reales del equipo directivo y docente.
     </div>
   </div>
 </section>
@@ -190,7 +198,6 @@
         <caption class="sr-only">Datos oficiales de la institución educativa</caption>
         <tbody>
           <tr><th scope="row">Razón social</th><td>{{name}}</td></tr>
-          <tr><th scope="row">Naturaleza jurídica</th><td>Entidad sin ánimo de lucro (ESAL)</td></tr>
           <tr><th scope="row">NIT</th><td>{{nit}}</td></tr>
           <tr><th scope="row">Código DANE</th><td>{{dane}}</td></tr>
           <tr><th scope="row">Carácter</th><td>Privado · Académico</td></tr>
@@ -210,8 +217,8 @@
   <div class="wrap">
     <div class="cta" data-reveal>
       <h2>Ven a conocernos</h2>
-      <p>La mejor manera de entender lo que hacemos es caminar el campus en un día normal de clase.
-        Agenda una visita con tu familia.</p>
+      <p>La mejor manera de entender lo que hacemos es caminar el campus en un día normal
+        de clase. Agenda una visita con tu familia.</p>
       <div class="btn-row">
         <a class="btn btn--light" href="admisiones.html">Ver el proceso de admisión</a>
         <a class="btn btn--outline-light" href="contacto.html">Agendar visita</a>

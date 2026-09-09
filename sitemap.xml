@@ -1,11 +1,132 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://www.fundareservabarichara.edu.co/index.html</loc><lastmod>2026-09-08</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://www.fundareservabarichara.edu.co/nosotros.html</loc><lastmod>2026-09-08</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.fundareservabarichara.edu.co/proyecto-educativo.html</loc><lastmod>2026-09-08</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.fundareservabarichara.edu.co/niveles.html</loc><lastmod>2026-09-08</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.fundareservabarichara.edu.co/vida-escolar.html</loc><lastmod>2026-09-08</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.fundareservabarichara.edu.co/admisiones.html</loc><lastmod>2026-09-08</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.fundareservabarichara.edu.co/noticias.html</loc><lastmod>2026-09-08</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.fundareservabarichara.edu.co/contacto.html</loc><lastmod>2026-09-08</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://www.colegioejemplo.edu.co/index.html</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.colegioejemplo.edu.co/index.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.colegioejemplo.edu.co/en/index.html"/>
+  </url>
+  <url>
+    <loc>https://www.colegioejemplo.edu.co/nosotros.html</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.colegioejemplo.edu.co/nosotros.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.colegioejemplo.edu.co/en/nosotros.html"/>
+  </url>
+  <url>
+    <loc>https://www.colegioejemplo.edu.co/proyecto-educativo.html</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.colegioejemplo.edu.co/proyecto-educativo.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.colegioejemplo.edu.co/en/proyecto-educativo.html"/>
+  </url>
+  <url>
+    <loc>https://www.colegioejemplo.edu.co/niveles.html</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.colegioejemplo.edu.co/niveles.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.colegioejemplo.edu.co/en/niveles.html"/>
+  </url>
+  <url>
+    <loc>https://www.colegioejemplo.edu.co/vida-escolar.html</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.colegioejemplo.edu.co/vida-escolar.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.colegioejemplo.edu.co/en/vida-escolar.html"/>
+  </url>
+  <url>
+    <loc>https://www.colegioejemplo.edu.co/admisiones.html</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.colegioejemplo.edu.co/admisiones.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.colegioejemplo.edu.co/en/admisiones.html"/>
+  </url>
+  <url>
+    <loc>https://www.colegioejemplo.edu.co/noticias.html</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.colegioejemplo.edu.co/noticias.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.colegioejemplo.edu.co/en/noticias.html"/>
+  </url>
+  <url>
+    <loc>https://www.colegioejemplo.edu.co/contacto.html</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.colegioejemplo.edu.co/contacto.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.colegioejemplo.edu.co/en/contacto.html"/>
+  </url>
+  <url>
+    <loc>https://www.colegioejemplo.edu.co/en/index.html</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.colegioejemplo.edu.co/index.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.colegioejemplo.edu.co/en/index.html"/>
+  </url>
+  <url>
+    <loc>https://www.colegioejemplo.edu.co/en/nosotros.html</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.colegioejemplo.edu.co/nosotros.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.colegioejemplo.edu.co/en/nosotros.html"/>
+  </url>
+  <url>
+    <loc>https://www.colegioejemplo.edu.co/en/proyecto-educativo.html</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.colegioejemplo.edu.co/proyecto-educativo.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.colegioejemplo.edu.co/en/proyecto-educativo.html"/>
+  </url>
+  <url>
+    <loc>https://www.colegioejemplo.edu.co/en/niveles.html</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.colegioejemplo.edu.co/niveles.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.colegioejemplo.edu.co/en/niveles.html"/>
+  </url>
+  <url>
+    <loc>https://www.colegioejemplo.edu.co/en/vida-escolar.html</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.colegioejemplo.edu.co/vida-escolar.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.colegioejemplo.edu.co/en/vida-escolar.html"/>
+  </url>
+  <url>
+    <loc>https://www.colegioejemplo.edu.co/en/admisiones.html</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.colegioejemplo.edu.co/admisiones.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.colegioejemplo.edu.co/en/admisiones.html"/>
+  </url>
+  <url>
+    <loc>https://www.colegioejemplo.edu.co/en/noticias.html</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.colegioejemplo.edu.co/noticias.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.colegioejemplo.edu.co/en/noticias.html"/>
+  </url>
+  <url>
+    <loc>https://www.colegioejemplo.edu.co/en/contacto.html</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.colegioejemplo.edu.co/contacto.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.colegioejemplo.edu.co/en/contacto.html"/>
+  </url>
 </urlset>

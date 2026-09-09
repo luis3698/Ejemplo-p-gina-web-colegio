@@ -8,8 +8,8 @@
     </nav>
     <p class="eyebrow">Vida escolar</p>
     <h1>Lo que pasa entre una clase y otra también educa</h1>
-    <p class="lead">Huerta, arte, deporte, campamentos, celebraciones y asambleas. La vida cotidiana
-      del colegio es parte del currículo, no un complemento.</p>
+    <p class="lead">Arte, deporte, salidas pedagógicas, celebraciones y asambleas. La vida
+      cotidiana del colegio es parte del currículo, no un complemento.</p>
   </div>
 </section>
 
@@ -17,22 +17,22 @@
 <section class="section" id="campus">
   <div class="wrap split">
     <div class="split__media" data-reveal>
-      <img src="assets/img/escena-campus.svg" alt="Ilustración del campus del colegio con la casa principal y árboles." width="1000" height="750">
+      {{photo:campus|Instalaciones del campus escolar|escena-campus.svg|(min-width: 920px) 46vw, 100vw}}
     </div>
     <div data-reveal data-reveal-delay="1">
       <p class="eyebrow">El lugar</p>
-      <h2>Un campus que es reserva natural</h2>
-      <p>Estamos en la vereda El Llano, sobre la vía Barichara – San Gil, kilómetro 4. El colegio
-        está inmerso en bosque seco tropical, uno de los ecosistemas más amenazados del país y,
-        para nosotros, el mejor material didáctico posible.</p>
-      <p>El campus se recorre a pie. No hay pasillos cerrados: entre un espacio y otro siempre se
-        pasa por afuera, y eso cambia la manera en que transcurre el día.</p>
+      <h2>Un campus diseñado para la vida escolar</h2>
+      <p>Aulas amplias y luminosas, laboratorios, biblioteca, talleres de arte, comedor,
+        canchas y zonas verdes. Los espacios están organizados por niveles para que cada
+        edad tenga su propio territorio dentro del colegio.</p>
+      <p>Todo el campus se recorre a pie y está pensado para que el movimiento entre
+        espacios sea parte natural de la jornada.</p>
       <ul class="checklist">
-        <li>{{icon:check}}<span>Aulas abiertas y zonas de trabajo a la sombra.</span></li>
-        <li>{{icon:check}}<span>Huerta agroecológica y punto de compostaje.</span></li>
-        <li>{{icon:check}}<span>Taller de artes, biblioteca y comedor escolar.</span></li>
-        <li>{{icon:check}}<span>Cancha múltiple y zonas de juego libre.</span></li>
-        <li>{{icon:check}}<span>Senderos de observación dentro de la reserva.</span></li>
+        <li>{{icon:check}}<span>Aulas por nivel, con materiales y mobiliario adecuados a cada edad.</span></li>
+        <li>{{icon:check}}<span>Laboratorios de ciencias y sala de sistemas.</span></li>
+        <li>{{icon:check}}<span>Biblioteca, talleres de arte y comedor escolar.</span></li>
+        <li>{{icon:check}}<span>Canchas deportivas y zonas verdes de juego libre.</span></li>
+        <li>{{icon:check}}<span>Enfermería y espacios de acompañamiento psicológico.</span></li>
       </ul>
     </div>
   </div>
@@ -48,21 +48,21 @@
     <div class="grid grid--3">
       <article class="card card--link" data-reveal>
         <div class="card__icon">{{icon:check}}</div>
-        <h3>Huerta escolar</h3>
-        <p>Cada grupo tiene su era. Se siembra, se cuida y se cosecha por ciclos, y parte de la
-          producción llega al comedor del colegio.</p>
+        <h3>Semilleros de investigación</h3>
+        <p>Grupos de estudiantes que profundizan en un tema durante todo el año y lo presentan
+          en la feria institucional de proyectos.</p>
       </article>
       <article class="card card--link" data-reveal data-reveal-delay="1">
         <div class="card__icon card__icon--teja">{{icon:check}}</div>
         <h3>Artes y teatro</h3>
-        <p>Plástica, música y expresión escénica durante todo el año, con una muestra abierta al
-          municipio al cierre de cada semestre.</p>
+        <p>Plástica, música y expresión escénica durante todo el año, con una muestra abierta
+          a la comunidad al cierre de cada semestre.</p>
       </article>
       <article class="card card--link" data-reveal data-reveal-delay="2">
         <div class="card__icon card__icon--sol">{{icon:check}}</div>
-        <h3>Campamentos</h3>
-        <p>Salidas de varios días para bachillerato por los caminos reales de la provincia:
-          autonomía, convivencia y territorio.</p>
+        <h3>Salidas pedagógicas</h3>
+        <p>Salidas de campo por nivel y convivencias de varios días para bachillerato:
+          autonomía, convivencia y aprendizaje fuera del aula.</p>
       </article>
       <article class="card card--link" data-reveal>
         <div class="card__icon card__icon--cielo">{{icon:check}}</div>
@@ -72,15 +72,15 @@
       </article>
       <article class="card card--link" data-reveal data-reveal-delay="1">
         <div class="card__icon">{{icon:check}}</div>
-        <h3>Asamblea escolar</h3>
-        <p>Los estudiantes participan en decisiones de convivencia y en la organización de eventos
-          a través de asambleas periódicas.</p>
+        <h3>Gobierno escolar</h3>
+        <p>Personería, consejo estudiantil y asambleas: los estudiantes participan en
+          decisiones reales de la vida institucional.</p>
       </article>
       <article class="card card--link" data-reveal data-reveal-delay="2">
         <div class="card__icon card__icon--teja">{{icon:check}}</div>
         <h3>Escuela de familias</h3>
-        <p>Encuentros de formación y conversación con madres, padres y cuidadores sobre crianza,
-          límites y acompañamiento.</p>
+        <p>Encuentros de formación y conversación con madres, padres y cuidadores sobre
+          crianza, límites y acompañamiento.</p>
       </article>
     </div>
   </div>
@@ -98,51 +98,53 @@
     <div class="filters" data-filter-group data-filter-target=".gallery__item" data-reveal>
       <button class="filter" data-filter="todos" aria-pressed="true">Todo</button>
       <button class="filter" data-filter="campus" aria-pressed="false">Campus</button>
-      <button class="filter" data-filter="huerta" aria-pressed="false">Huerta</button>
+      <button class="filter" data-filter="academico" aria-pressed="false">Académico</button>
       <button class="filter" data-filter="arte" aria-pressed="false">Arte</button>
       <button class="filter" data-filter="deporte" aria-pressed="false">Deporte</button>
-      <button class="filter" data-filter="salidas" aria-pressed="false">Salidas</button>
+      <button class="filter" data-filter="comunidad" aria-pressed="false">Comunidad</button>
     </div>
 
     <div class="gallery" data-reveal>
       <figure class="gallery__item" data-cat="campus" role="button" tabindex="0">
-        <img src="assets/img/escena-campus.svg" alt="El campus del colegio visto desde la entrada" width="1000" height="750">
-        <figcaption>La casa principal del campus</figcaption>
+        {{photo:campus|Fachada e instalaciones del colegio|escena-campus.svg|(min-width: 700px) 25vw, 50vw}}
+        <figcaption>El campus visto desde la entrada</figcaption>
       </figure>
-      <figure class="gallery__item" data-cat="huerta" role="button" tabindex="0">
-        <img src="assets/img/escena-huerta.svg" alt="Estudiantes trabajando en las eras de la huerta" width="1000" height="750">
-        <figcaption>Jornada de siembra en la huerta</figcaption>
+      <figure class="gallery__item" data-cat="academico" role="button" tabindex="0">
+        {{photo:aula|Clase en el aula|escena-aula.svg|(min-width: 700px) 25vw, 50vw}}
+        <figcaption>Trabajo por proyectos en el aula</figcaption>
+      </figure>
+      <figure class="gallery__item" data-cat="academico" role="button" tabindex="0">
+        {{photo:laboratorio|Práctica en el laboratorio de ciencias|escena-laboratorio.svg|(min-width: 700px) 25vw, 50vw}}
+        <figcaption>Laboratorio de ciencias naturales</figcaption>
       </figure>
       <figure class="gallery__item" data-cat="arte" role="button" tabindex="0">
-        <img src="assets/img/escena-taller.svg" alt="Taller de artes plásticas con caballetes y paleta" width="1000" height="750">
+        {{photo:arte|Taller de artes plásticas|escena-arte.svg|(min-width: 700px) 25vw, 50vw}}
         <figcaption>Taller de artes plásticas</figcaption>
       </figure>
-      <figure class="gallery__item" data-cat="salidas" role="button" tabindex="0">
-        <img src="assets/img/escena-bosque.svg" alt="Caminata por el sendero del bosque" width="1000" height="750">
-        <figcaption>Caminata por los senderos de la reserva</figcaption>
-      </figure>
       <figure class="gallery__item" data-cat="deporte" role="button" tabindex="0">
-        <img src="assets/img/escena-deporte.svg" alt="Estudiantes jugando en la cancha" width="1000" height="750">
-        <figcaption>Deporte formativo en la cancha múltiple</figcaption>
+        {{photo:deporte|Estudiantes en la cancha|escena-deporte.svg|(min-width: 700px) 25vw, 50vw}}
+        <figcaption>Deporte formativo en la cancha</figcaption>
       </figure>
-      <figure class="gallery__item" data-cat="salidas" role="button" tabindex="0">
-        <img src="assets/img/escena-campamento.svg" alt="Carpas montadas durante el campamento" width="1000" height="750">
-        <figcaption>Campamento de bachillerato</figcaption>
-      </figure>
-      <figure class="gallery__item" data-cat="campus" role="button" tabindex="0">
-        <img src="assets/img/escena-aula.svg" alt="Aula abierta con biblioteca de aula" width="1000" height="750">
-        <figcaption>Aula abierta y biblioteca</figcaption>
+      <figure class="gallery__item" data-cat="academico" role="button" tabindex="0">
+        {{photo:biblioteca|Estudiantes leyendo en la biblioteca|escena-biblioteca.svg|(min-width: 700px) 25vw, 50vw}}
+        <figcaption>Biblioteca y plan lector</figcaption>
       </figure>
       <figure class="gallery__item" data-cat="campus" role="button" tabindex="0">
-        <img src="assets/img/escena-comunidad.svg" alt="Familias y estudiantes reunidos" width="1000" height="750">
+        {{photo:patio|Patio de descanso|escena-patio.svg|(min-width: 700px) 25vw, 50vw}}
+        <figcaption>Zona de descanso y juego libre</figcaption>
+      </figure>
+      <figure class="gallery__item" data-cat="comunidad" role="button" tabindex="0">
+        {{photo:comunidad|Familias y estudiantes reunidos|escena-comunidad.svg|(min-width: 700px) 25vw, 50vw}}
         <figcaption>Encuentro de familias</figcaption>
       </figure>
     </div>
 
     <div class="note-box mt-3" data-reveal>
-      <strong>Nota para el administrador del sitio:</strong> estas ilustraciones son marcadores de posición.
-      Sustitúyelas por fotografías reales del colegio en <code>assets/img/</code> y recuerda contar con
-      la autorización de uso de imagen de las familias antes de publicar fotos de menores de edad.
+      <strong>Nota para el administrador del sitio:</strong> estas ilustraciones son marcadores
+      de posición. Copia tus fotografías en <code>assets/img/originals/</code> y ejecuta
+      <code>python tools/optimize_images.py</code>; el sitio pasará solo a usarlas en formato
+      AVIF, WebP y JPG. <strong>Importante:</strong> necesitas la autorización escrita de uso
+      de imagen de las familias antes de publicar fotos de menores de edad.
     </div>
   </div>
 </section>
@@ -153,8 +155,8 @@
     <div class="section-head" data-reveal>
       <p class="eyebrow">Calendario A</p>
       <h2>Fechas clave del año escolar</h2>
-      <p class="lead">Estructura general del año. Las fechas exactas se publican en la circular de
-        inicio de año y en la sección de noticias.</p>
+      <p class="lead">Estructura general del año. Las fechas exactas se publican en la circular
+        de inicio de año y en la sección de noticias.</p>
     </div>
     <div class="table-wrap" data-reveal>
       <table>
@@ -166,10 +168,10 @@
           <tr><td>Enero</td><td>Inicio de clases</td><td>Semana de acogida y construcción de acuerdos por grupo.</td></tr>
           <tr><td>Marzo</td><td>Cierre primer período</td><td>Informes descriptivos y reunión individual con cada familia.</td></tr>
           <tr><td>Abril</td><td>Semana de receso</td><td>Receso escolar de Semana Santa.</td></tr>
-          <tr><td>Junio</td><td>Muestra artística</td><td>“La Experiencia”: teatro, música y artes plásticas abiertas al público.</td></tr>
+          <tr><td>Junio</td><td>Muestra artística</td><td>Teatro, música y artes plásticas abiertos al público.</td></tr>
           <tr><td>Junio – julio</td><td>Vacaciones de mitad de año</td><td>Receso escolar.</td></tr>
-          <tr><td>Agosto</td><td>Campamento de bachillerato</td><td>Salida pedagógica de varios días para los grados 6º a 11º.</td></tr>
-          <tr><td>Septiembre</td><td>Semana de la ciencia y la huerta</td><td>Proyectos de investigación y feria abierta a las familias.</td></tr>
+          <tr><td>Agosto</td><td>Convivencias y salidas</td><td>Salidas pedagógicas de varios días para bachillerato.</td></tr>
+          <tr><td>Septiembre</td><td>Feria de proyectos</td><td>Semana de la ciencia y muestra de semilleros de investigación.</td></tr>
           <tr><td>Octubre</td><td>Pruebas Saber 11</td><td>Presentación oficial de los estudiantes de grado 11º.</td></tr>
           <tr><td>Noviembre</td><td>Clausura y grados</td><td>Cierre del año escolar y ceremonia de grado de la promoción.</td></tr>
         </tbody>
@@ -189,25 +191,23 @@
       <article class="card" data-reveal>
         <div class="card__icon card__icon--cielo">{{icon:check}}</div>
         <h3>Ruta escolar</h3>
-        <p>Transporte desde Barichara y San Gil, con acompañante en ruta y horarios coordinados
-          con la jornada.</p>
+        <p>Transporte con acompañante en ruta y horarios coordinados con la jornada escolar.</p>
       </article>
       <article class="card" data-reveal data-reveal-delay="1">
         <div class="card__icon card__icon--sol">{{icon:check}}</div>
         <h3>Comedor escolar</h3>
-        <p>Almuerzo y refrigerio preparados en el campus, con alimentos frescos y aporte de la
-          huerta escolar.</p>
+        <p>Almuerzo y refrigerio preparados en el campus, con minuta revisada por nutricionista.</p>
       </article>
       <article class="card" data-reveal data-reveal-delay="2">
         <div class="card__icon card__icon--teja">{{icon:check}}</div>
         <h3>Acompañamiento psicológico</h3>
-        <p>Apoyo al desarrollo emocional de los estudiantes y orientación a las familias cuando
-          se requiere.</p>
+        <p>Apoyo al desarrollo emocional de los estudiantes y orientación a las familias
+          cuando se requiere.</p>
       </article>
       <article class="card" data-reveal data-reveal-delay="3">
         <div class="card__icon">{{icon:check}}</div>
         <h3>Comunicación con familias</h3>
-        <p>Circulares, reuniones por período y canal directo con el acompañante de grupo de
+        <p>Circulares, reuniones por período y canal directo con el director de grupo de
           cada estudiante.</p>
       </article>
     </div>
@@ -217,9 +217,9 @@
 <section class="section section--alt">
   <div class="wrap">
     <div class="cta" data-reveal>
-      <h2>Vive un día en la reserva</h2>
-      <p>Recibimos a las familias interesadas durante la jornada escolar para que vean el colegio
-        funcionando de verdad, sin montaje.</p>
+      <h2>Vive un día en el colegio</h2>
+      <p>Recibimos a las familias interesadas durante la jornada escolar para que vean el
+        colegio funcionando de verdad, sin montaje.</p>
       <div class="btn-row">
         <a class="btn btn--light" href="contacto.html">Agendar una visita</a>
         <a class="btn btn--outline-light" href="admisiones.html">Ver admisiones</a>

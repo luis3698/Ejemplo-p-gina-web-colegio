@@ -1,12 +1,27 @@
 /* =========================================================================
-   Fundación Reserva para la Infancia — main.js
+   Sitio web escolar — main.js
    Sin dependencias externas. Progressive enhancement + accesibilidad.
+   Los textos y el índice de búsqueda llegan por idioma en window.SITE_I18N,
+   que inyecta tools/build.py en cada página.
    ========================================================================= */
 (function () {
   'use strict';
 
   document.documentElement.classList.remove('no-js');
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var T = window.SITE_I18N || {};
+  var STRINGS = {
+    searchPlaceholder: T.searchPlaceholder || 'Buscar…',
+    searchAria: T.searchAria || 'Buscar en el sitio',
+    searchEmpty: T.searchEmpty || 'Sin resultados para “{q}”.',
+    sending: T.sending || 'Enviando…',
+    formError: T.formError || 'No pudimos enviar el mensaje. Inténtalo de nuevo.',
+    formDemo: T.formDemo || 'Modo demostración: no hay destinatario configurado.',
+    closeMenu: T.closeMenu || 'Cerrar menú',
+    openMenu: T.openMenu || 'Abrir menú',
+    themeLight: T.themeLight || 'Cambiar a tema claro',
+    themeDark: T.themeDark || 'Cambiar a tema oscuro'
+  };
 
   /* ---------- 1. Tema claro / oscuro ---------- */
   function initTheme() {
@@ -15,8 +30,8 @@
     btn.addEventListener('click', function () {
       var next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
       document.documentElement.setAttribute('data-theme', next);
-      btn.setAttribute('aria-label', next === 'dark' ? 'Cambiar a tema claro' : 'Cambiar a tema oscuro');
-      try { localStorage.setItem('fri-theme', next); } catch (e) {}
+      btn.setAttribute('aria-label', next === 'dark' ? STRINGS.themeLight : STRINGS.themeDark);
+      try { localStorage.setItem('site-theme', next); } catch (e) {}
     });
   }
 
@@ -30,7 +45,7 @@
       nav.classList.toggle('is-open', open);
       document.body.classList.toggle('nav-open', open);
       toggle.setAttribute('aria-expanded', String(open));
-      toggle.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+      toggle.setAttribute('aria-label', open ? STRINGS.closeMenu : STRINGS.openMenu);
     }
     toggle.addEventListener('click', function () {
       setOpen(!nav.classList.contains('is-open'));
@@ -93,6 +108,7 @@
   function initCounters() {
     var nums = document.querySelectorAll('[data-count]');
     if (!nums.length) return;
+    var locale = document.documentElement.lang || 'es-CO';
 
     function run(el) {
       var target = parseFloat(el.getAttribute('data-count'));
@@ -102,7 +118,7 @@
       function frame(now) {
         var p = Math.min((now - start) / dur, 1);
         var eased = 1 - Math.pow(1 - p, 3);
-        el.textContent = Math.round(target * eased).toLocaleString('es-CO') + suffix;
+        el.textContent = Math.round(target * eased).toLocaleString(locale) + suffix;
         if (p < 1) requestAnimationFrame(frame);
       }
       requestAnimationFrame(frame);
@@ -183,11 +199,10 @@
     box.className = 'lightbox';
     box.setAttribute('role', 'dialog');
     box.setAttribute('aria-modal', 'true');
-    box.setAttribute('aria-label', 'Galería ampliada');
     box.innerHTML =
-      '<button class="lightbox__close" aria-label="Cerrar galería"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button>' +
-      '<button class="lightbox__nav lightbox__nav--prev" aria-label="Imagen anterior"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></button>' +
-      '<button class="lightbox__nav lightbox__nav--next" aria-label="Imagen siguiente"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></button>' +
+      '<button class="lightbox__close" aria-label="×"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button>' +
+      '<button class="lightbox__nav lightbox__nav--prev" aria-label="‹"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></button>' +
+      '<button class="lightbox__nav lightbox__nav--next" aria-label="›"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></button>' +
       '<figure><div class="lightbox__stage"></div><figcaption></figcaption></figure>';
     document.body.appendChild(box);
 
@@ -195,17 +210,25 @@
     var caption = box.querySelector('figcaption');
     var index = 0, lastFocus = null;
 
+    function visibleItems() {
+      return items.filter(function (it) { return !it.classList.contains('is-hidden'); });
+    }
     function render(i) {
-      var visible = items.filter(function (it) { return !it.classList.contains('is-hidden'); });
+      var visible = visibleItems();
       if (!visible.length) return;
       index = (i + visible.length) % visible.length;
       var src = visible[index];
-      var media = src.querySelector('img, svg');
+      var media = src.querySelector('picture, img, svg');
       stage.innerHTML = '';
-      if (media) stage.appendChild(media.cloneNode(true));
+      if (media) {
+        var clone = media.cloneNode(true);
+        clone.removeAttribute('style');       // quita el placeholder borroso
+        var innerImg = clone.tagName === 'IMG' ? clone : clone.querySelector('img');
+        if (innerImg) { innerImg.setAttribute('loading', 'eager'); innerImg.removeAttribute('sizes'); }
+        stage.appendChild(clone);
+      }
       var cap = src.querySelector('figcaption');
       caption.textContent = cap ? cap.textContent : '';
-      box.dataset.visibleCount = visible.length;
     }
     function open(i) {
       lastFocus = document.activeElement;
@@ -220,10 +243,7 @@
       if (lastFocus) lastFocus.focus();
     }
     items.forEach(function (item) {
-      function openThis() {
-        var visible = items.filter(function (it) { return !it.classList.contains('is-hidden'); });
-        open(visible.indexOf(item));
-      }
+      function openThis() { open(visibleItems().indexOf(item)); }
       item.addEventListener('click', openThis);
       item.addEventListener('keydown', function (e) {
         if (e.key === 'Enter' || e.key === ' ' || e.key === 'Spacebar') { e.preventDefault(); openThis(); }
@@ -241,20 +261,43 @@
     });
   }
 
-  /* ---------- 10. Validación de formularios ---------- */
+  /* ---------- 10. Formularios: validación + envío real ---------- */
+  /*  MEJORA 1.
+      Si tools/build.py tiene configurado SITE['form_endpoint'], el formulario
+      se envía de verdad por fetch() a ese endpoint (Formspree, Web3Forms,
+      Getform o un backend propio). Si no, queda en modo demostración: valida
+      y avisa con claridad que aún no hay destinatario.                       */
   function initForms() {
+    var endpoint = T.formEndpoint && T.formEndpoint !== 'PENDIENTE' ? T.formEndpoint : null;
+
     document.querySelectorAll('form[data-validate]').forEach(function (form) {
       var status = form.querySelector('.form-status');
 
+      if (endpoint) {
+        form.setAttribute('action', endpoint);
+        form.setAttribute('method', 'POST');
+      }
+
+      function say(message, isError) {
+        if (!status) return;
+        status.textContent = message;
+        status.classList.add('is-visible');
+        status.classList.toggle('form-status--error', !!isError);
+        status.setAttribute('role', isError ? 'alert' : 'status');
+        status.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'center' });
+      }
+
       function validateField(input) {
-        var field = input.closest('.field') || input.closest('.check');
-        if (!field) return true;
+        var field = input.closest('.field');
+        if (!field) return input.checkValidity();
         var ok = input.checkValidity();
         field.classList.toggle('is-invalid', !ok);
+        input.setAttribute('aria-invalid', ok ? 'false' : 'true');
         return ok;
       }
 
       form.querySelectorAll('input, select, textarea').forEach(function (input) {
+        if (input.type === 'hidden') return;
         input.addEventListener('blur', function () { validateField(input); });
         input.addEventListener('input', function () {
           var field = input.closest('.field');
@@ -264,104 +307,112 @@
 
       form.addEventListener('submit', function (e) {
         e.preventDefault();
+
+        // Trampa antispam: si un robot la rellena, fingimos éxito y no enviamos.
+        var honey = form.querySelector('input[name="_gotcha"]');
+        if (honey && honey.value) { say(form.getAttribute('data-success')); form.reset(); return; }
+
         var valid = true, firstBad = null;
         form.querySelectorAll('input, select, textarea').forEach(function (input) {
+          if (input.type === 'hidden') return;
           if (!validateField(input)) { valid = false; if (!firstBad) firstBad = input; }
         });
         if (!valid) { if (firstBad) firstBad.focus(); return; }
 
         var btn = form.querySelector('button[type="submit"]');
         var original = btn ? btn.textContent : '';
-        if (btn) { btn.disabled = true; btn.textContent = 'Enviando…'; }
+        function restore() { if (btn) { btn.disabled = false; btn.textContent = original; } }
+        if (btn) { btn.disabled = true; btn.textContent = STRINGS.sending; }
 
-        // Demo local: sin backend, se simula el envío.
-        // Para producción, reemplazar por fetch() al endpoint real (ver README.md).
-        setTimeout(function () {
-          if (btn) { btn.disabled = false; btn.textContent = original; }
-          if (status) {
-            status.textContent = form.getAttribute('data-success') ||
-              '¡Gracias! Hemos recibido tu mensaje. Te responderemos en un plazo máximo de 2 días hábiles.';
-            status.classList.add('is-visible');
-            status.setAttribute('role', 'status');
-            status.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'center' });
-          }
-          form.reset();
-        }, 900);
+        if (!endpoint) {
+          // Modo demostración.
+          setTimeout(function () {
+            restore();
+            say(form.getAttribute('data-success') + ' — ' + STRINGS.formDemo);
+            form.reset();
+          }, 700);
+          return;
+        }
+
+        var data = new FormData(form);
+        if (T.formAccessKey) data.append('access_key', T.formAccessKey);
+        data.append('_subject', form.getAttribute('data-subject') || document.title);
+        data.append('_language', document.documentElement.lang || 'es');
+        data.append('_page', location.href);
+
+        fetch(endpoint, {
+          method: 'POST',
+          body: data,
+          headers: { Accept: 'application/json' }
+        })
+          .then(function (r) {
+            if (!r.ok) throw new Error('HTTP ' + r.status);
+            return r.json().catch(function () { return {}; });
+          })
+          .then(function (json) {
+            if (json && json.success === false) throw new Error(json.message || 'rejected');
+            restore();
+            say(form.getAttribute('data-success'));
+            form.reset();
+            form.querySelectorAll('.is-invalid').forEach(function (f) { f.classList.remove('is-invalid'); });
+          })
+          .catch(function () {
+            restore();
+            say(STRINGS.formError, true);
+          });
       });
     });
   }
 
   /* ---------- 11. Buscador interno ---------- */
-  var SEARCH_INDEX = [
-    { t: 'Inicio', d: 'Colegio de pedagogía viva en Barichara, Santander.', u: 'index.html' },
-    { t: 'Quiénes somos', d: 'Historia, misión, visión, valores y equipo directivo.', u: 'nosotros.html' },
-    { t: 'Historia · 25 años', d: 'De la reserva natural al colegio: nuestra línea de tiempo.', u: 'nosotros.html#historia' },
-    { t: 'Misión y visión', d: 'Nuestro horizonte institucional.', u: 'nosotros.html#horizonte' },
-    { t: 'Equipo', d: 'Rectoría, coordinación y acompañantes.', u: 'nosotros.html#equipo' },
-    { t: 'Proyecto educativo (PEI)', d: 'Pedagogía viva, aprendizaje en la naturaleza y evaluación por procesos.', u: 'proyecto-educativo.html' },
-    { t: 'Pedagogía viva', d: 'Qué es y cómo la practicamos día a día.', u: 'proyecto-educativo.html#pedagogia' },
-    { t: 'Ambientes de aprendizaje', d: 'Huerta, bosque, taller, biblioteca y aulas abiertas.', u: 'proyecto-educativo.html#ambientes' },
-    { t: 'Niveles educativos', d: 'Preescolar, primaria, secundaria y media.', u: 'niveles.html' },
-    { t: 'Preescolar', d: 'Pre-jardín, jardín I y jardín II.', u: 'niveles.html#preescolar' },
-    { t: 'Básica primaria', d: 'Grados 1º a 5º.', u: 'niveles.html#primaria' },
-    { t: 'Básica secundaria', d: 'Grados 6º a 9º.', u: 'niveles.html#secundaria' },
-    { t: 'Educación media', d: 'Grados 10º y 11º, con resultados Saber 11 sobre el promedio nacional.', u: 'niveles.html#media' },
-    { t: 'Vida escolar', d: 'Arte, huerta, deporte, campamentos y campus.', u: 'vida-escolar.html' },
-    { t: 'Campus y reserva', d: 'Cuatro hectáreas en la vereda El Llano.', u: 'vida-escolar.html#campus' },
-    { t: 'Galería', d: 'Fotografías de la vida cotidiana del colegio.', u: 'vida-escolar.html#galeria' },
-    { t: 'Calendario escolar', d: 'Fechas clave del calendario A.', u: 'vida-escolar.html#calendario' },
-    { t: 'Admisiones', d: 'Proceso de ingreso paso a paso, requisitos y costos.', u: 'admisiones.html' },
-    { t: 'Proceso de admisión', d: 'Cinco pasos, desde la solicitud hasta la matrícula.', u: 'admisiones.html#proceso' },
-    { t: 'Requisitos y documentos', d: 'Qué necesitas para inscribirte.', u: 'admisiones.html#requisitos' },
-    { t: 'Costos educativos', d: 'Matrícula, pensión y becas.', u: 'admisiones.html#costos' },
-    { t: 'Preguntas frecuentes', d: 'Transporte, alimentación, uniformes y más.', u: 'admisiones.html#faq' },
-    { t: 'Formulario de admisión', d: 'Solicita tu cupo en línea.', u: 'admisiones.html#formulario' },
-    { t: 'Noticias y agenda', d: 'Novedades, comunicados y circulares.', u: 'noticias.html' },
-    { t: 'Contacto', d: 'Teléfonos, correo, mapa y formulario.', u: 'contacto.html' },
-    { t: 'Cómo llegar', d: 'Vía Barichara – San Gil, km 4, vereda El Llano.', u: 'contacto.html#mapa' }
-  ];
-
   function initSearch() {
     var openers = document.querySelectorAll('[data-open-search]');
-    if (!openers.length) return;
+    var index = T.search || [];
+    if (!openers.length || !index.length) return;
 
     var dlg = document.createElement('div');
     dlg.className = 'search-dialog';
     dlg.setAttribute('role', 'dialog');
     dlg.setAttribute('aria-modal', 'true');
-    dlg.setAttribute('aria-label', 'Buscar en el sitio');
+    dlg.setAttribute('aria-label', STRINGS.searchAria);
     dlg.innerHTML =
       '<div class="search-box">' +
-      '<input type="search" placeholder="Buscar: admisiones, pedagogía, costos…" aria-label="Buscar en el sitio" autocomplete="off">' +
-      '<div class="search-results" role="listbox"></div></div>';
+      '<input type="search" autocomplete="off">' +
+      '<div class="search-results"></div></div>';
     document.body.appendChild(dlg);
 
     var input = dlg.querySelector('input');
+    input.placeholder = STRINGS.searchPlaceholder;
+    input.setAttribute('aria-label', STRINGS.searchAria);
     var out = dlg.querySelector('.search-results');
     var lastFocus = null;
 
     function norm(s) {
       return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
     }
+    function escape(s) {
+      return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    }
     function render(q) {
       var query = norm(q.trim());
       var list = query.length < 2
-        ? SEARCH_INDEX.slice(0, 6)
-        : SEARCH_INDEX.filter(function (i) { return norm(i.t + ' ' + i.d).indexOf(query) !== -1; });
+        ? index.slice(0, 6)
+        : index.filter(function (i) { return norm(i.t + ' ' + i.d).indexOf(query) !== -1; });
       if (!list.length) {
-        out.innerHTML = '<p class="search-empty">Sin resultados para “' + q.replace(/</g, '&lt;') + '”. Prueba con «admisiones» o «pedagogía».</p>';
+        out.innerHTML = '<p class="search-empty">' +
+          escape(STRINGS.searchEmpty).replace('{q}', escape(q)) + '</p>';
         return;
       }
       out.innerHTML = list.slice(0, 8).map(function (i) {
-        return '<a href="' + i.u + '"><b>' + i.t + '</b><span>' + i.d + '</span></a>';
+        return '<a href="' + i.u + '"><b>' + escape(i.t) + '</b><span>' + escape(i.d) + '</span></a>';
       }).join('');
     }
     function open() {
       lastFocus = document.activeElement;
       dlg.classList.add('is-open');
       document.body.style.overflow = 'hidden';
-      render('');
       input.value = '';
+      render('');
       input.focus();
     }
     function close() {
@@ -374,7 +425,10 @@
     dlg.addEventListener('click', function (e) { if (e.target === dlg) close(); });
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape' && dlg.classList.contains('is-open')) close();
-      if ((e.ctrlKey || e.metaKey) && e.key === 'k') { e.preventDefault(); dlg.classList.contains('is-open') ? close() : open(); }
+      if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+        e.preventDefault();
+        if (dlg.classList.contains('is-open')) { close(); } else { open(); }
+      }
     });
     input.addEventListener('keydown', function (e) {
       if (e.key === 'ArrowDown') { e.preventDefault(); var f = out.querySelector('a'); if (f) f.focus(); }
@@ -387,8 +441,7 @@
     var here = location.pathname.split('/').pop() || 'index.html';
     document.querySelectorAll('.nav__link').forEach(function (a) {
       var target = a.getAttribute('href');
-      if (!target) return;
-      if (target.split('#')[0] === here) a.setAttribute('aria-current', 'page');
+      if (target && target.split('#')[0] === here) a.setAttribute('aria-current', 'page');
     });
   }
 
@@ -407,7 +460,8 @@
 
     if ('serviceWorker' in navigator && location.protocol.indexOf('http') === 0) {
       window.addEventListener('load', function () {
-        navigator.serviceWorker.register('sw.js').catch(function () {});
+        var base = document.documentElement.lang === 'en' ? '../sw.js' : 'sw.js';
+        navigator.serviceWorker.register(base).catch(function () {});
       });
     }
   }

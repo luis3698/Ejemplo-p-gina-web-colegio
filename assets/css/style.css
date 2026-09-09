@@ -1,7 +1,8 @@
 /* =========================================================================
-   Fundación Reserva para la Infancia — Barichara, Santander
-   Sistema de diseño · "Educamos por naturaleza"
-   Paleta tomada del logo institucional: teja, verde, sol, cielo, naranja.
+   Sitio web escolar — sistema de diseño
+   Plantilla genérica y bilingüe para instituciones educativas.
+   Paleta por defecto: teja, verde, sol, cielo y naranja sobre neutros cálidos.
+   Para cambiarla, edita únicamente los tokens de la sección 1.
    ========================================================================= */
 
 /* ---------- 1. Tokens ---------- */
@@ -15,7 +16,7 @@
   --cielo-600:#246A8C; --cielo-500:#2F80A8; --cielo-200:#CFE6F0;
   --naranja-500:#E8792B;
 
-  /* Neutros — piedra de Barichara */
+  /* Neutros cálidos */
   --piedra-50:#FCFAF6; --piedra-100:#F6F1E7; --piedra-200:#EDE5D6;
   --piedra-300:#DED2BC; --piedra-400:#BFAF94;
   --tierra-900:#2A211A; --tierra-800:#3B2F26; --tierra-600:#6B5C4E; --tierra-400:#948676;
@@ -89,6 +90,10 @@ body{
 }
 main{flex:1}
 img,svg,video{display:block;max-width:100%;height:auto}
+/* Fotografías responsivas: <picture> se comporta como su <img> interno y el
+   placeholder borroso vive en el propio <picture> (ver tools/build.py). */
+picture{display:block;width:100%;height:100%}
+picture > img{width:100%;height:100%;object-fit:cover}
 button,input,select,textarea{font:inherit;color:inherit}
 button{background:none;border:0;cursor:pointer}
 a{color:inherit;text-decoration:none}
@@ -199,6 +204,22 @@ p{text-wrap:pretty}
 }
 .icon-btn:hover{background:var(--surface-2);color:var(--text);border-color:var(--border)}
 .icon-btn svg{width:19px;height:19px}
+/* Selector de idioma */
+.lang-switch{
+  display:inline-flex;align-items:center;gap:.35rem;height:40px;padding:0 .8rem;
+  border-radius:var(--r-pill);border:1px solid var(--border);color:var(--text-soft);
+  font-size:.8rem;font-weight:700;letter-spacing:.04em;transition:.25s;
+}
+.lang-switch:hover{background:var(--surface-2);color:var(--brand);border-color:var(--border-strong)}
+.lang-switch svg{width:17px;height:17px;flex:none}
+.lang-switch--block{display:none}
+@media (max-width:920px){
+  .header__actions .lang-switch{display:none}
+  .lang-switch--block{
+    display:flex;justify-content:center;width:100%;height:auto;padding:.85rem 1rem;margin-top:.7rem;
+    font-family:var(--font-sans);font-size:.9rem;
+  }
+}
 .theme-btn .icon-moon{display:none}
 [data-theme="dark"] .theme-btn .icon-moon{display:block}
 [data-theme="dark"] .theme-btn .icon-sun{display:none}
@@ -211,10 +232,15 @@ p{text-wrap:pretty}
 }
 @media (max-width:920px){
   .nav-toggle{display:grid}
+  /* El backdrop-filter de .header la convierte en bloque contenedor de sus
+     descendientes fijos, así que el menú se posiciona respecto a la cabecera
+     (top:100% = justo debajo) y se le da alto explícito, no inset:0. */
   .nav{
-    position:fixed;inset:var(--header-h) 0 0;margin:0;
+    position:fixed;top:100%;left:0;right:0;bottom:auto;margin:0;
+    height:calc(100vh - var(--header-h));
+    height:calc(100dvh - var(--header-h));
     background:var(--bg);padding:1.4rem var(--gutter) 2.6rem;
-    overflow-y:auto;
+    overflow-y:auto;-webkit-overflow-scrolling:touch;
     transform:translateX(100%);visibility:hidden;
     transition:transform .42s var(--ease),visibility .42s;
   }
@@ -504,6 +530,10 @@ p{text-wrap:pretty}
 }
 .form-status.is-visible{display:block}
 [data-theme="dark"] .form-status{background:#1E3323;color:var(--verde-300)}
+.form-status--error{border-color:var(--teja-500);background:var(--teja-100);color:var(--teja-700)}
+[data-theme="dark"] .form-status--error{background:#33211A;color:var(--teja-300)}
+/* Trampa antispam: invisible para las personas, visible para los robots. */
+.hp{position:absolute!important;left:-9999px!important;width:1px!important;height:1px!important;overflow:hidden}
 
 /* ---------- 16. Contacto ---------- */
 .contact-card{display:flex;gap:1rem;align-items:flex-start;padding:1.3rem;border:1px solid var(--border);border-radius:var(--r-md);background:var(--surface)}

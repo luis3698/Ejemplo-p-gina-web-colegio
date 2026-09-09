@@ -2,13 +2,13 @@
 <section class="hero">
   <div class="wrap hero__grid">
     <div data-reveal>
-      <p class="hero__badge"><b>25 años</b> Educando en Barichara desde el año 2000</p>
-      <h1>Aquí la infancia crece <em>al aire libre</em>.</h1>
-      <p class="lead">Somos un colegio campestre de <strong>pedagogía viva</strong> en Barichara, Santander.
-        Acompañamos a más de 170 niñas, niños y jóvenes desde preescolar hasta grado 11º, con la
-        reserva natural como aula y la comunidad como maestra.</p>
+      <p class="hero__badge"><b>30 años</b> Formando estudiantes desde {{founded}}</p>
+      <h1>Educamos personas, <em>no solo estudiantes</em>.</h1>
+      <p class="lead">Somos una institución educativa de calendario A que acompaña a niñas, niños
+        y jóvenes desde preescolar hasta grado 11º. Un modelo pedagógico propio, grupos reducidos
+        y una formación que atiende a la persona completa.</p>
       <div class="btn-row">
-        <a class="btn btn--accent" href="admisiones.html">Solicitar cupo 2027</a>
+        <a class="btn btn--accent" href="admisiones.html">Solicitar cupo</a>
         <a class="btn btn--ghost" href="proyecto-educativo.html">Conoce nuestro proyecto</a>
       </div>
       <div class="pill-row">
@@ -21,13 +21,13 @@
 
     <div class="hero__media" data-reveal data-reveal-delay="2">
       <div class="hero__frame">
-        <img src="assets/img/escena-campus.svg" alt="Ilustración del campus del colegio: casa de teja, árboles y niñas y niños jugando en la reserva." width="1000" height="750">
+        {{photo:portada|Estudiantes en el campus de la institución educativa|escena-campus.svg|(min-width: 960px) 46vw, 100vw|priority}}
       </div>
       <div class="hero__chip hero__chip--a">
-        <span><strong data-count="170" data-suffix="+">170+</strong> estudiantes<br>en comunidad</span>
+        <span><strong data-count="600" data-suffix="+">600+</strong> estudiantes<br>en comunidad</span>
       </div>
       <div class="hero__chip hero__chip--b">
-        <span><strong>4 ha</strong> de reserva<br>natural viva</span>
+        <span><strong>14</strong> grados<br>en un solo campus</span>
       </div>
     </div>
   </div>
@@ -37,12 +37,12 @@
 <div class="marquee" aria-hidden="true">
   <div class="marquee__track">
     <div class="marquee__group">
-      <span>Pedagogía viva</span><span>Aprender haciendo</span><span>Naturaleza como aula</span>
-      <span>Grupos pequeños</span><span>Arte y territorio</span><span>Comunidad</span>
+      <span>Formación integral</span><span>Aprendizaje activo</span><span>Grupos reducidos</span>
+      <span>Bilingüismo</span><span>Arte y deporte</span><span>Comunidad</span>
     </div>
     <div class="marquee__group">
-      <span>Pedagogía viva</span><span>Aprender haciendo</span><span>Naturaleza como aula</span>
-      <span>Grupos pequeños</span><span>Arte y territorio</span><span>Comunidad</span>
+      <span>Formación integral</span><span>Aprendizaje activo</span><span>Grupos reducidos</span>
+      <span>Bilingüismo</span><span>Arte y deporte</span><span>Comunidad</span>
     </div>
   </div>
 </div>
@@ -52,11 +52,11 @@
   <div class="wrap">
     <div class="stats" data-reveal>
       <div class="stat">
-        <p class="stat__num"><span data-count="25">25</span></p>
+        <p class="stat__num"><span data-count="30">30</span></p>
         <p class="stat__label">años de trayectoria</p>
       </div>
       <div class="stat">
-        <p class="stat__num"><span data-count="170">170</span><sup>+</sup></p>
+        <p class="stat__num"><span data-count="600">600</span><sup>+</sup></p>
         <p class="stat__label">estudiantes acompañados</p>
       </div>
       <div class="stat">
@@ -64,10 +64,11 @@
         <p class="stat__label">grados, de pre-jardín a 11º</p>
       </div>
       <div class="stat">
-        <p class="stat__num"><span data-count="18">18</span></p>
+        <p class="stat__num"><span data-count="25">25</span></p>
         <p class="stat__label">estudiantes por grupo (máximo)</p>
       </div>
     </div>
+    <p class="form__note mt-2">Cifras de ejemplo. Reemplázalas por los datos reales de la institución.</p>
   </div>
 </section>
 
@@ -76,35 +77,35 @@
   <div class="wrap">
     <div class="section-head section-head--center" data-reveal>
       <p class="eyebrow">Nuestra diferencia</p>
-      <h2>Un colegio pensado para que aprender siga siendo un gusto</h2>
-      <p class="lead">No preparamos para la escuela: acompañamos la vida. Cuatro convicciones sostienen
-        todo lo que hacemos cada día en la reserva.</p>
+      <h2>Cuatro convicciones que sostienen lo que hacemos</h2>
+      <p class="lead">No son un cartel en la pared: son los criterios con los que tomamos
+        decisiones pedagógicas todos los días.</p>
     </div>
 
     <div class="grid grid--4">
       <article class="card card--link" data-reveal>
         <div class="card__icon">{{icon:check}}</div>
-        <h3>Pedagogía viva</h3>
-        <p>El aprendizaje parte del interés real de cada estudiante. Se acompaña, no se impone:
-          preguntas propias, proyectos con sentido y respeto por los ritmos de cada edad.</p>
+        <h3>Aprendizaje activo</h3>
+        <p>El estudiante construye su conocimiento haciendo, preguntando y equivocándose.
+          El docente acompaña ese proceso con intención y método.</p>
       </article>
       <article class="card card--link" data-reveal data-reveal-delay="1">
         <div class="card__icon card__icon--sol">{{icon:check}}</div>
-        <h3>La naturaleza es el aula</h3>
-        <p>Cuatro hectáreas de reserva, huerta, bosque seco y quebrada. La ciencia se toca,
-          la matemática se mide en la huerta y la escritura nace de lo vivido.</p>
+        <h3>Formación integral</h3>
+        <p>Lo académico, lo emocional, lo corporal, lo artístico y lo ciudadano se trabajan
+          a la vez. Ninguna dimensión sustituye a otra.</p>
       </article>
       <article class="card card--link" data-reveal data-reveal-delay="2">
         <div class="card__icon card__icon--teja">{{icon:check}}</div>
-        <h3>Grupos pequeños</h3>
-        <p>Máximo 18 estudiantes por grupo. Cada maestro conoce a cada niña y a cada niño
-          por su nombre, su historia y su manera particular de aprender.</p>
+        <h3>Grupos reducidos</h3>
+        <p>Cada docente conoce a sus estudiantes por su nombre, su historia y su manera
+          particular de aprender. El seguimiento es personal.</p>
       </article>
       <article class="card card--link" data-reveal data-reveal-delay="3">
         <div class="card__icon card__icon--cielo">{{icon:check}}</div>
-        <h3>Raíz en el territorio</h3>
-        <p>Barichara, su piedra, sus oficios y su gente entran al colegio. Formamos personas
-          capaces de cuidar el lugar que habitan y de proyectarse al mundo.</p>
+        <h3>Familia y colegio</h3>
+        <p>Educar exige coherencia entre la casa y la escuela. Las familias participan
+          con canales claros y encuentros periódicos.</p>
       </article>
     </div>
   </div>
@@ -114,18 +115,18 @@
 <section class="section">
   <div class="wrap split">
     <div class="split__media" data-reveal>
-      <img src="assets/img/escena-bosque.svg" alt="Ilustración de estudiantes caminando por un sendero entre árboles." width="1000" height="750">
+      {{photo:aula|Estudiantes trabajando en un aula|escena-aula.svg|(min-width: 920px) 46vw, 100vw}}
     </div>
     <div data-reveal data-reveal-delay="1">
       <p class="eyebrow">Proyecto educativo</p>
       <h2>Aprender es una experiencia, no una lista de temas</h2>
-      <p>Nuestro proyecto educativo institucional articula el currículo oficial colombiano con una
-        práctica de <strong>educación viva y activa</strong>. Los contenidos existen —y se cumplen—,
-        pero llegan a través de la experiencia: el proyecto, la pregunta, la salida de campo, el taller.</p>
-      <p>El resultado son estudiantes que sostienen la curiosidad, que saben trabajar con otros y que
-        llegan a la educación media con criterio propio.</p>
+      <p>Nuestro Proyecto Educativo Institucional articula el currículo oficial colombiano con
+        una práctica de <strong>aprendizaje activo</strong>. Los contenidos existen —y se cumplen—,
+        pero llegan a través de la experiencia: el proyecto, la pregunta, el laboratorio, el taller.</p>
+      <p>El resultado son estudiantes que sostienen la curiosidad, que saben trabajar con otros
+        y que llegan a la educación media con criterio propio.</p>
       <ul class="checklist">
-        <li>{{icon:check}}<span><strong>Ambientes preparados</strong> por edad, con materiales manipulativos y espacios abiertos.</span></li>
+        <li>{{icon:check}}<span><strong>Ambientes preparados</strong> por edad, con materiales y espacios pensados para cada etapa.</span></li>
         <li>{{icon:check}}<span><strong>Evaluación por procesos</strong>: observación continua, portafolio y conversación con la familia.</span></li>
         <li>{{icon:check}}<span><strong>Acompañamiento emocional</strong> y resolución de conflictos como parte del currículo.</span></li>
         <li>{{icon:check}}<span><strong>Inglés y expresión artística</strong> presentes desde preescolar.</span></li>
@@ -148,12 +149,12 @@
     <div class="grid grid--4">
       <article class="level" data-reveal>
         <div class="level__top">
-          <img src="assets/img/escena-comunidad.svg" alt="" width="1000" height="750">
+          {{photo:preescolar||escena-comunidad.svg|(min-width: 920px) 24vw, 100vw}}
           <span class="level__age">3 a 5 años</span>
         </div>
         <div class="level__body">
           <h3>Preescolar</h3>
-          <p>Pre-jardín, jardín I y jardín II. El juego libre, el movimiento y el vínculo seguro
+          <p>Pre-jardín, jardín y transición. El juego, el movimiento y el vínculo seguro
             son la base de todo lo que viene después.</p>
           <div class="level__meta"><span class="tag">Juego</span><span class="tag">Motricidad</span><span class="tag">Lenguaje</span></div>
           <a class="link-arrow" href="niveles.html#preescolar">Conocer</a>
@@ -162,35 +163,35 @@
 
       <article class="level" data-reveal data-reveal-delay="1">
         <div class="level__top">
-          <img src="assets/img/escena-huerta.svg" alt="" width="1000" height="750">
+          {{photo:primaria||escena-aula.svg|(min-width: 920px) 24vw, 100vw}}
           <span class="level__age">6 a 10 años</span>
         </div>
         <div class="level__body">
           <h3>Básica primaria</h3>
-          <p>Grados 1º a 5º. Lectura, escritura y pensamiento matemático con proyectos que
-            salen del aula hacia la huerta y el territorio.</p>
-          <div class="level__meta"><span class="tag">Proyectos</span><span class="tag">Huerta</span><span class="tag">Lectura</span></div>
+          <p>Grados 1º a 5º. Lectura, escritura y pensamiento matemático con proyectos
+            que integran varias áreas.</p>
+          <div class="level__meta"><span class="tag">Proyectos</span><span class="tag">Lectura</span><span class="tag">Inglés</span></div>
           <a class="link-arrow" href="niveles.html#primaria">Conocer</a>
         </div>
       </article>
 
       <article class="level" data-reveal data-reveal-delay="2">
         <div class="level__top">
-          <img src="assets/img/escena-taller.svg" alt="" width="1000" height="750">
+          {{photo:secundaria||escena-laboratorio.svg|(min-width: 920px) 24vw, 100vw}}
           <span class="level__age">11 a 14 años</span>
         </div>
         <div class="level__body">
           <h3>Básica secundaria</h3>
           <p>Grados 6º a 9º. Profundización disciplinar, laboratorio, arte y los primeros
             proyectos de investigación propios.</p>
-          <div class="level__meta"><span class="tag">Ciencias</span><span class="tag">Arte</span><span class="tag">Inglés</span></div>
+          <div class="level__meta"><span class="tag">Ciencias</span><span class="tag">Arte</span><span class="tag">Debate</span></div>
           <a class="link-arrow" href="niveles.html#secundaria">Conocer</a>
         </div>
       </article>
 
       <article class="level" data-reveal data-reveal-delay="3">
         <div class="level__top">
-          <img src="assets/img/escena-campamento.svg" alt="" width="1000" height="750">
+          {{photo:media||escena-biblioteca.svg|(min-width: 920px) 24vw, 100vw}}
           <span class="level__age">15 a 17 años</span>
         </div>
         <div class="level__body">
@@ -209,21 +210,21 @@
 <section class="section">
   <div class="wrap split split--reverse">
     <div class="split__media" data-reveal>
-      <img src="assets/img/escena-huerta.svg" alt="Ilustración de la huerta escolar con eras sembradas y estudiantes trabajando." width="1000" height="750">
+      {{photo:campus|Instalaciones del campus|escena-campus.svg|(min-width: 920px) 46vw, 100vw}}
     </div>
     <div data-reveal data-reveal-delay="1">
       <p class="eyebrow">El campus</p>
-      <h2>Un colegio dentro de una reserva</h2>
-      <p>Estamos en la vía Barichara – San Gil, kilómetro 4, en la vereda El Llano. El campus está
-        rodeado de bosque seco tropical: el mismo paisaje que estudiamos en clase de ciencias es
-        el que se ve por la ventana.</p>
-      <p>Aulas abiertas, huerta productiva, zona de talleres, biblioteca, cancha y senderos.
-        Cada espacio está pensado para que el cuerpo también aprenda.</p>
+      <h2>Espacios pensados para aprender</h2>
+      <p>Aulas amplias y luminosas, laboratorios de ciencias, biblioteca, sala de sistemas,
+        talleres de arte, comedor y zonas deportivas. Cada espacio tiene una intención
+        pedagógica definida.</p>
+      <p>El campus se recorre a pie y está diseñado para que el movimiento entre espacios
+        sea parte natural de la jornada.</p>
       <ul class="checklist">
-        <li>{{icon:check}}<span>Huerta escolar agroecológica con producción para el comedor.</span></li>
-        <li>{{icon:check}}<span>Taller de artes plásticas, música y expresión corporal.</span></li>
-        <li>{{icon:check}}<span>Senderos de observación y punto de compostaje.</span></li>
-        <li>{{icon:check}}<span>Ruta escolar desde Barichara y San Gil.</span></li>
+        <li>{{icon:check}}<span>Laboratorios de ciencias naturales y sala de sistemas.</span></li>
+        <li>{{icon:check}}<span>Biblioteca y salas de lectura por nivel.</span></li>
+        <li>{{icon:check}}<span>Talleres de artes plásticas, música y expresión corporal.</span></li>
+        <li>{{icon:check}}<span>Canchas deportivas, comedor escolar y ruta de transporte.</span></li>
       </ul>
       <p class="mt-2"><a class="link-arrow" href="vida-escolar.html">Recorrer la vida escolar</a></p>
     </div>
@@ -235,31 +236,31 @@
   <div class="wrap">
     <div class="section-head" data-reveal>
       <p class="eyebrow">Resultados</p>
-      <h2>Educar con libertad también da resultados</h2>
-      <p class="lead">En las Pruebas Saber 11 de 2025 nuestros estudiantes obtuvieron promedios por
-        encima del promedio municipal y departamental en las cinco áreas evaluadas.</p>
+      <h2>Formar con libertad también da resultados</h2>
+      <p class="lead">Promedios institucionales en las Pruebas Saber 11, por encima del promedio
+        nacional en las cinco áreas evaluadas.</p>
     </div>
 
     <div class="stats" data-reveal>
       <div class="stat">
-        <p class="stat__num"><span data-count="66">66</span></p>
+        <p class="stat__num"><span data-count="68">68</span></p>
         <p class="stat__label">Inglés</p>
       </div>
       <div class="stat">
-        <p class="stat__num"><span data-count="65">65</span></p>
+        <p class="stat__num"><span data-count="66">66</span></p>
         <p class="stat__label">Lectura crítica</p>
       </div>
       <div class="stat">
-        <p class="stat__num"><span data-count="64">64</span></p>
+        <p class="stat__num"><span data-count="65">65</span></p>
         <p class="stat__label">Matemáticas</p>
       </div>
       <div class="stat">
-        <p class="stat__num"><span data-count="60">60</span></p>
+        <p class="stat__num"><span data-count="63">63</span></p>
         <p class="stat__label">Ciencias y Sociales</p>
       </div>
     </div>
-    <p class="form__note mt-2" style="color:#B8B2A4">Promedios sobre 100 puntos. Fuente: resultados Saber 11 · 2025.
-      La matrícula pasó de 72 estudiantes en 2015 a más de 170 en la actualidad.</p>
+    <p class="form__note mt-2" style="color:#B8B2A4">Promedios sobre 100 puntos. Cifras de ejemplo:
+      reemplázalas por los resultados oficiales publicados por el Icfes.</p>
   </div>
 </section>
 
@@ -275,8 +276,8 @@
       <div class="quotes__track">
         <figure class="quote">
           <p class="quote__mark" aria-hidden="true">“</p>
-          <p>Llegamos buscando un colegio y encontramos una comunidad. Mi hija entró tímida a jardín
-            y hoy explica a los visitantes cómo funciona el compostaje de la huerta.</p>
+          <p>Llegamos buscando un colegio y encontramos una comunidad. Mi hija entró tímida a
+            jardín y hoy explica sus proyectos delante de todo el curso.</p>
           <figcaption class="quote__who">
             <span class="avatar" aria-hidden="true">MF</span>
             <span><b>Madre de familia</b><span>Preescolar y primaria</span></span>
@@ -285,8 +286,8 @@
 
         <figure class="quote">
           <p class="quote__mark" aria-hidden="true">“</p>
-          <p>Lo que más valoro es que no perdieron la curiosidad. En bachillerato siguen preguntando,
-            proponiendo proyectos y discutiendo con argumentos.</p>
+          <p>Lo que más valoro es que no perdieron la curiosidad. En bachillerato siguen
+            preguntando, proponiendo proyectos y discutiendo con argumentos.</p>
           <figcaption class="quote__who">
             <span class="avatar" aria-hidden="true">PF</span>
             <span><b>Padre de familia</b><span>Básica secundaria</span></span>
@@ -308,6 +309,8 @@
         <button data-q="next" aria-label="Testimonio siguiente"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></button>
       </div>
     </div>
+    <p class="form__note" style="text-align:center">Testimonios de ejemplo. Reemplázalos por
+      testimonios reales, con autorización de quien los da.</p>
   </div>
 </section>
 
@@ -316,40 +319,40 @@
   <div class="wrap">
     <div class="section-head" data-reveal>
       <p class="eyebrow">Noticias</p>
-      <h2>Lo que está pasando en la reserva</h2>
+      <h2>Lo que está pasando en el colegio</h2>
       <p class="lead">Circulares, agenda y las historias de cada semana.</p>
     </div>
 
     <div class="grid grid--3">
       <article class="post" data-reveal>
-        <div class="post__img"><img src="assets/img/escena-campamento.svg" alt="" width="1000" height="750"></div>
+        <div class="post__img">{{photo:noticia-1||escena-laboratorio.svg|(min-width: 920px) 31vw, 100vw}}</div>
         <div class="post__body">
-          <p class="post__meta"><span>Vida escolar</span><span class="dot"></span><span>Septiembre 2026</span></p>
-          <h3>Campamento de bachillerato 2026: tres días de territorio</h3>
-          <p>Estudiantes de 6º a 11º recorrieron los caminos reales de la provincia guanentina en la
-            salida pedagógica más esperada del año.</p>
+          <p class="post__meta"><span>Académico</span><span class="dot"></span><span>Mes / Año</span></p>
+          <h3>Feria de proyectos de investigación escolar</h3>
+          <p>Los grupos de secundaria presentaron ante la comunidad los proyectos desarrollados
+            durante el semestre en ciencias y ciencias sociales.</p>
           <a class="link-arrow" href="noticias.html">Leer</a>
         </div>
       </article>
 
       <article class="post" data-reveal data-reveal-delay="1">
-        <div class="post__img"><img src="assets/img/escena-taller.svg" alt="" width="1000" height="750"></div>
+        <div class="post__img">{{photo:noticia-2||escena-arte.svg|(min-width: 920px) 31vw, 100vw}}</div>
         <div class="post__body">
-          <p class="post__meta"><span>Arte</span><span class="dot"></span><span>Agosto 2026</span></p>
-          <h3>“La Experiencia”: la muestra artística que abre el colegio al pueblo</h3>
-          <p>Teatro, artes plásticas y música creados por los estudiantes durante el semestre,
-            presentados ante toda la comunidad.</p>
+          <p class="post__meta"><span>Arte y cultura</span><span class="dot"></span><span>Mes / Año</span></p>
+          <h3>Muestra artística de fin de semestre</h3>
+          <p>Teatro, artes plásticas y música creados por los estudiantes, presentados ante
+            familias y vecinos.</p>
           <a class="link-arrow" href="noticias.html">Leer</a>
         </div>
       </article>
 
       <article class="post" data-reveal data-reveal-delay="2">
-        <div class="post__img"><img src="assets/img/escena-huerta.svg" alt="" width="1000" height="750"></div>
+        <div class="post__img">{{photo:noticia-3||escena-deporte.svg|(min-width: 920px) 31vw, 100vw}}</div>
         <div class="post__body">
-          <p class="post__meta"><span>Ambiental</span><span class="dot"></span><span>Julio 2026</span></p>
-          <h3>La huerta escolar ya abastece parte del comedor</h3>
-          <p>El proyecto agroecológico de primaria cerró su primer ciclo completo de siembra,
-            cosecha y transformación de alimentos.</p>
+          <p class="post__meta"><span>Deporte</span><span class="dot"></span><span>Mes / Año</span></p>
+          <h3>Encuentro deportivo intercolegiado</h3>
+          <p>Nuestros equipos participaron en el torneo con un enfoque de juego cooperativo
+            y participación de todos los grados.</p>
           <a class="link-arrow" href="noticias.html">Leer</a>
         </div>
       </article>
@@ -363,9 +366,9 @@
 <section class="section">
   <div class="wrap">
     <div class="cta" data-reveal>
-      <h2>Las admisiones para 2027 están abiertas</h2>
+      <h2>Las admisiones están abiertas</h2>
       <p>Agenda una visita, recorre el campus con tu familia y conversa con nuestro equipo.
-        Los cupos por grupo son limitados: máximo 18 estudiantes.</p>
+        Los cupos por grupo son limitados.</p>
       <div class="btn-row">
         <a class="btn btn--light" href="admisiones.html">Iniciar proceso de admisión</a>
         <a class="btn btn--outline-light" href="contacto.html">Agendar una visita</a>
